@@ -16,7 +16,7 @@ function Card() {
         }
       )
 
-      setRecords(res.data)
+      setRecords(res.data.slide(0,4))
      // console.log(res);
     } catch (error) {}
   }
