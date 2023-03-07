@@ -28,7 +28,7 @@ function Card() {
     <>
    
       {records.map((_) => (
-        // <span>{_.id}</span>
+    
        <div className='col-md-3'>
         <div className="card" style={{width:'23rem'}}>
   <img src={_.card_image} className="card-img-top" alt="" />
