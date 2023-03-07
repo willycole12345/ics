@@ -54,3 +54,22 @@ export type menuItemProps = {
     title: string;
     href?: string;
 };
+
+export type categoryProps = {
+    id: number;
+    lms_course_id: string;
+    code: string;
+    version: string;
+    institution_id: string;
+    semester: string;
+    name: string;
+    level: string;
+    course_pacing: string;
+    enrollment_source: string;
+    language: string;
+    thumbnail: string;
+    card_image: string;
+    price: string;
+    instructors: string;
+    subcategory_id: string;
+};

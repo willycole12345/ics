@@ -1,38 +1,45 @@
-import { PropsWithChildren } from 'react';
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+import { categoryProps } from '../types'
 
-type Props = {
-    userIcon: string;
-    headingsContent: string;
-    paragraphs: string;
-} & PropsWithChildren;
+function Card() {
+  const [records, setRecords] = useState<categoryProps[]>([])
 
-function DataCard({ userIcon, headingsContent, paragraphs }: Props) {
-    return (
-        <div className='online_new'>
-        <div className="container-fluid">
-            <div className="row">
-                <div className="col-md-6">
-                    <img className="dashboard_placement" src={userIcon} alt="logo" />
-                </div>
-                <div className="col-md-6">
-                    <span>
-                        <h3 className="dashboardcard_text_icon">{headingsContent}</h3>
-                    </span>
-                    <h4 className='dashboard_count text-start paragraph_text'>
-                        <span className=' '>{paragraphs}</span>
-                    </h4>
-                    <div className='bttt_placement'>
-                    <div className="nav__item_btt nav__button_white nav__button_white--brand">
-                        <a><span>Log In </span>
-                        </a>
-                        </div>
-                    <div className="nav__item_btt nav__button nav__button--brand"><a  className=""><span>Sign Up</span></a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    );
+  const getRecords = async () => {
+    try {
+      const res = await axios.get(
+        `https://tqfe-develop.herokuapp.com/ce/featured-course-list`,
+        {
+          headers: {
+            Authorization: 'Token f3b715a18390d3097123869f63b14f1cdd8e4df0',
+          },
+        }
+      )
+
+      setRecords(res.data)
+     // console.log(res);
+    } catch (error) {}
+  }
+  useEffect(() => {
+    getRecords()
+  }, [])
+
+  return (
+    <>
+   
+      {records.map((_) => (
+        // <span>{_.id}</span>
+       <div className='col-md-3'>
+        <div className="card" style={{width:'23rem'}}>
+  <img src={_.card_image} className="card-img-top" alt="" />
+  <div className="card-body">
+    <h5 className="card-title">{_.name}</h5>
+    <p className="card-text">{_.enrollment_source}</p>  </div>
+       </div>
+   </div>
+      ))}
+    </>
+  )
 }
 
-export default DataCard;
+export default Card

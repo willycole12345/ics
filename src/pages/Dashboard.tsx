@@ -1,4 +1,4 @@
-import { DataCard, AccountLayout } from '../components';
+import { DataCard, Card, AccountLayout } from '../components';
 import { women } from '../images';
 
 
@@ -7,7 +7,19 @@ function Dashboard() {
     var __paragraphs = 'Acquire new knowledge and skills, train for certification diplomas and degrees from world-class instituitions at your own pace and space.';
     return (
         <AccountLayout>
-        <DataCard userIcon={women} headingsContent={__headingsContent} paragraphs={__paragraphs} />    
+        <DataCard userIcon={women} headingsContent={__headingsContent} paragraphs={__paragraphs} />  
+        <section className='online_n'>
+        <div className='container'>
+            <div className='row'>
+              <div className='title_holding'>
+                <h3 className='floating_left'>Featured Courses</h3>
+                <a className='btn btn_stying floating_right'>See all courses</a>
+              </div>
+              <Card />
+            </div>
+            </div>
+            </section> 
+
         </AccountLayout>
     );
 }

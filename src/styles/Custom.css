@@ -159,7 +159,35 @@ font-size: 18px;
     top: 17%;
 }
 
+.online_n{
+    padding-top:80px;
+    padding-bottom:80px;
+}
 
+.floating_right{
+    float: right;
+   
+}
+.floating_left{
+    float: left;
+}
+
+.btn_stying{
+    background-color: rgba(0, 121, 140, 1);
+    color: white;
+    border-radius: 30px;
+}
+.title_holding{
+    padding-bottom: 30px;
+}
+
+.text_color_header{
+ color:rgba(0, 135, 61, 1);
+}
+.text_color_p{
+    color:rgba(0, 0, 0, 1);
+
+   }
 
 
 
