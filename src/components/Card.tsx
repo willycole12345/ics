@@ -16,7 +16,7 @@ function Card() {
         }
       )
 
-      setRecords(res.data.slide(0,4))
+      setRecords(res.data)
      // console.log(res);
     } catch (error) {}
   }
@@ -27,14 +27,14 @@ function Card() {
   return (
     <>
    
-      {records.map((_) => (
+      {records.slice(0,4).map((_) => (
     
        <div className='col-md-3'>
-        <div className="card" style={{width:'23rem'}}>
-  <img src={_.card_image} className="card-img-top" alt="" />
-  <div className="card-body">
-    <h5 className="card-title">{_.name}</h5>
-    <p className="card-text">{_.enrollment_source}</p>  </div>
+        <div className="card" style={{width:'20rem'}}>
+             <img src={_.card_image} className="card-img-top" alt="" />
+                <div className="card-body">
+                    <h5 className="card-title">{_.name}</h5>
+                     <p className="card-text">{_.enrollment_source}</p>  </div>
        </div>
    </div>
       ))}

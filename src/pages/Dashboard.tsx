@@ -1,4 +1,4 @@
-import { DataCard, Card, AccountLayout } from '../components';
+import { DataCard, Card, Categories, AccountLayout } from '../components';
 import { women } from '../images';
 
 
@@ -16,6 +16,18 @@ function Dashboard() {
                 <a className='btn btn_stying floating_right'>See all courses</a>
               </div>
               <Card />
+             
+            </div>
+            </div>
+            <br></br>
+            <div className='container'>
+            <div className='row'>
+              <div className='title_holding'>
+                <h3 className='floating_left'> Categories</h3>
+                <a className='btn btn_stying floating_right'></a>
+              </div>
+              <Categories />
+             
             </div>
             </div>
             </section> 

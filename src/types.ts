@@ -73,3 +73,7 @@ export type categoryProps = {
     instructors: string;
     subcategory_id: string;
 };
+export type categoryListProps = {
+    category: string;
+    subcategory: string;
+};
